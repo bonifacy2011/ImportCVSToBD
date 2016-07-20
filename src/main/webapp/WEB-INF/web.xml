@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+
+
+	<servlet>
+		<servlet-name>Contact</servlet-name>
+		<jsp-file>/WEB-INF/views/contact.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Contact</servlet-name>
+		<url-pattern>/contact.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Insert</servlet-name>
+		<jsp-file>/WEB-INF/views/insert.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Insert</servlet-name>
+		<url-pattern>/insert.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<jsp-file>/WEB-INF/views/view.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/view.do</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+		<servlet-name>UploadCSV</servlet-name>
+		<servlet-class>com.pleshak.contact.action.UploadFile</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UploadCSV</servlet-name>
+		<url-pattern>/UploadCSV</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ContactServlet</servlet-name>
+		<servlet-class>com.pleshak.contact.action.ContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ContactServlet</servlet-name>
+		<url-pattern>/contactServ.do</url-pattern>
+	</servlet-mapping>
+
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/TestDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+</web-app>
+
