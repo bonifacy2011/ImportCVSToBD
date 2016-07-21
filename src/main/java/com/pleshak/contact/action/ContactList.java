@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import com.pleshak.contact.domain.Contact;
 import com.pleshak.contact.utils.ConnectionDB;
 
+
+
+
 public class ContactList {
 
 	private int noOfRecords;
@@ -38,7 +41,7 @@ public class ContactList {
 			}
 			rs.close();
 			rs = pstmt.executeQuery("SELECT FOUND_ROWS()");
-			if (rs.next())
+			if (rs.next()) //
 				this.noOfRecords = rs.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
